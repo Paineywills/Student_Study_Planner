@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['tasks'])) {
 <head>
     <title>Quick Add Tasks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="container py-5">
 <h2 class="mb-4">Quick Add Tasks</h2>
@@ -58,5 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['tasks'])) {
     <button class="btn btn-success">Add Selected Tasks</button>
     <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
 </form>
+<script src="js/script.js"></script>
+
 </body>
 </html>

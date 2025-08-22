@@ -87,6 +87,8 @@ $tasks = $stmt->fetchAll();
 <head>
   <title>My Tasks</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="container py-5">
 
@@ -149,12 +151,13 @@ $tasks = $stmt->fetchAll();
     <a href="tasks.php" class="btn btn-secondary">Reset</a>
   </div>
 </form>
-    <div class="mb-3">
-    <a href="tasks.php?action=mark_all_done" class="btn btn-success me-2"
-       onclick="return confirm('Mark all tasks as done?');">Mark All as Done</a>
-    <a href="tasks.php?action=delete_all" class="btn btn-danger"
-       onclick="return confirm('Are you sure you want to delete all tasks?');">Delete All Tasks</a>
+
+<!-- Bulk actions -->
+<div class="mb-3">
+  <button onclick="markAllDone()" class="btn btn-success me-2">Mark All as Done</button>
+  <button onclick="deleteAllTasks()" class="btn btn-danger">Delete All Tasks</button>
 </div>
+
 
 
 <!-- Task list -->
@@ -167,7 +170,6 @@ $tasks = $stmt->fetchAll();
       <th>Status</th>
       <th>Action</th>
       <th>Priority</th>
-
     </tr>
   </thead>
   <tbody>
@@ -178,21 +180,22 @@ $tasks = $stmt->fetchAll();
       <td><?= htmlspecialchars($t['due_date']) ?></td>
       <td><?= $t['status'] ?></td>
       <td>
-       <?php if ($t['status'] !== 'done'): ?>
-         <a href="?done=<?= $t['id'] ?>" class="btn btn-success btn-sm">Mark Done</a>
+        <?php if ($t['status'] !== 'done'): ?>
+          <button onclick="markTaskDone(<?= $t['id'] ?>)" class="btn btn-success btn-sm">Mark Done</button>
         <?php endif; ?>
+        
         <a href="edit_task.php?id=<?= $t['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-       <a href="delete_task.php?id=<?= $t['id'] ?>" class="btn btn-danger btn-sm"
-          onclick="return confirm('Are you sure you want to delete this task?');">Delete</a>
+        <button onclick="deleteTask(<?= $t['id'] ?>)" class="btn btn-danger btn-sm">Delete</button>
       </td>
       <td><?= $t['priority'] ?></td>
     </tr>
-
     <?php endforeach; ?>
   </tbody>
 </table>
 
 <a href="dashboard.php" class="btn btn-secondary mt-3">Back to Dashboard</a>
 
+<!-- JavaScript -->
+<script src="js/script.js"></script>
 </body>
 </html>
