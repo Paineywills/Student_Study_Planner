@@ -84,10 +84,9 @@ Student_Study_Planner/
 
 ## 📌 Notes
 - Default login: create your own account using **Register** page.
-- Tested on XAMPP (PHP 8.2, MySQL 8).
-- For production use: secure sessions, validate inputs, and configure error handling.
+
 
 ---
 
 ## 👨‍💻 Author
-Your Name – https://github.com/your-username
+Mark Adjei Tutu – https://github.com/Paineywills
