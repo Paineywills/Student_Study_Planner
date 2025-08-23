@@ -57,7 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="container py-5">
 
-<h2 class="mb-4">My Profile</h2>
+<div class="profile-header">
+  <h2>My Profile</h2>
+</div>
+
+<div class="profile-container">
+   <!-- your form here -->
+</div>
+
 
 <?php if ($success): ?>
     <div class="alert alert-success"><?= $success ?></div>

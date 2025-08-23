@@ -160,38 +160,51 @@ $tasks = $stmt->fetchAll();
 
 
 
-<!-- Task list -->
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Due Date</th>
-      <th>Status</th>
-      <th>Action</th>
-      <th>Priority</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($tasks as $t): ?>
-    <tr>
-      <td><?= htmlspecialchars($t['title']) ?></td>
-      <td><?= htmlspecialchars($t['description']) ?></td>
-      <td><?= htmlspecialchars($t['due_date']) ?></td>
-      <td><?= $t['status'] ?></td>
-      <td>
-        <?php if ($t['status'] !== 'done'): ?>
-          <button onclick="markTaskDone(<?= $t['id'] ?>)" class="btn btn-success btn-sm">Mark Done</button>
-        <?php endif; ?>
-        
-        <a href="edit_task.php?id=<?= $t['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-        <button onclick="deleteTask(<?= $t['id'] ?>)" class="btn btn-danger btn-sm">Delete</button>
-      </td>
-      <td><?= $t['priority'] ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
+<div class="task-container">
+  <h2 class="mb-4 text-center">My Tasks</h2>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($tasks as $t): ?>
+        <tr>
+          <td><?= htmlspecialchars($t['title']) ?></td>
+          <td><?= htmlspecialchars($t['description']) ?></td>
+          <td><?= htmlspecialchars($t['due_date']) ?></td>
+          <td><span class="badge bg-<?= $t['status'] === 'done' ? 'success' : 'warning' ?>">
+              <?= $t['status'] ?>
+              </span>
+          </td>
+          <td><?= htmlspecialchars($t['priority']) ?></td>
+          <td>
+            <?php if ($t['status'] !== 'done'): ?>
+              <a href="?done=<?= $t['id'] ?>" class="btn btn-success btn-sm">Mark Done</a>
+            <?php endif; ?>
+            <a href="edit_task.php?id=<?= $t['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
+            <a href="delete_task.php?id=<?= $t['id'] ?>" class="btn btn-danger btn-sm"
+               onclick="return confirm('Are you sure you want to delete this task?');">Delete</a>
+          </td>
+        </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 text-center">
+    <a href="dashboard.php" class="btn btn-secondary">Back to Dashboard</a>
+  </div>
+</div>
+
 
 <a href="dashboard.php" class="btn btn-secondary mt-3">Back to Dashboard</a>
 
