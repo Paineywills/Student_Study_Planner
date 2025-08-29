@@ -49,23 +49,24 @@ Built with **PHP, MySQL, Bootstrap, and custom CSS**.
    
    📂 Project Structure
 
-   Student_Study_Planner/
-│── config.php                  # Database connection
-│── login.php                   # Login page
-│── register.php                # User registration
-│── dashboard.php               # User dashboard
-│── tasks.php                   # Manage tasks
-│── add_task.php                # Add new task
-│── edit_task.php               # Edit task
-│── delete_task.php             # Delete task
-│── profile.php                 # User profile
-│── logout.php                  # Logout
+Student_Study_Planner/
+│── config.php         # Database connection
+│── login.php          # Login page
+│── register.php       # User registration
+│── dashboard.php      # User dashboard
+│── tasks.php          # Manage tasks
+│── add_task.php       # Add new task
+│── edit_task.php      # Edit task
+│── delete_task.php    # Delete task
+│── profile.php        # User profile
+│── logout.php         # Logout
 │── css/
-│    └── style.css              # Custom styles
+│    └── style.css     # Custom styles
 │── js/
-│    └── script.js              # JS (future use)
-│── screenshots/                # App screenshots
-│── student_study_planner.sql   # Database schema (to import in phpMyAdmin)
+│    └── script.js     # JS (future use)
+│── screenshots/       # App screenshots
+│── study_planner.sql  # Database schema (to import in phpMyAdmin)
+
 
 ----
 
