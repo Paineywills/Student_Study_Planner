@@ -1,0 +1,496 @@
+/* ===== Back Button ===== */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+.btn-back:hover {
+    background-color: #217dbb;
+}
+
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Gradient Background Animation (Darker) ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(-45deg, #202020, #e0e0e0, #080808, #b5b5b5);
+  background-size: 200% 300%;
+  animation: gradientShift 6s ease infinite;
+  padding: 30px;
+}
+
+/* Smooth animated gradient keyframes */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Login Card ===== */
+form.card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Labels */
+form.card label {
+  font-weight: 600;
+  color: #444;
+}
+
+/* Inputs */
+form.card input {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+form.card input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.3);
+  outline: none;
+}
+
+/* Button */
+form.card button {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+form.card button:hover {
+  transform: translateY(-2px);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Error Alert ===== */
+.alert-danger {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* === Global Background with Gradient Animation === */
+body {
+  background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #1e3a8a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f8fafc;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Headings === */
+h2 {
+  color: #f1f5f9;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* === Cards & Forms === */
+.card {
+  background: rgba(30, 41, 59, 0.85);
+  border: none;
+  border-radius: 15px;
+  color: #f8fafc;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.card label {
+  color: #e2e8f0;
+}
+
+.form-control {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+.form-control:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 0.2rem rgba(96,165,250,0.4);
+}
+
+/* === Buttons === */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background: #2563eb;
+  border: none;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.btn-success {
+  background: #16a34a;
+  border: none;
+}
+.btn-success:hover {
+  background: #15803d;
+  transform: scale(1.05);
+}
+
+.btn-warning {
+  background: #facc15;
+  border: none;
+  color: #1e293b;
+}
+.btn-warning:hover {
+  background: #eab308;
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background: #dc2626;
+  border: none;
+}
+.btn-danger:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #64748b;
+  border: none;
+}
+.btn-secondary:hover {
+  background: #475569;
+  transform: scale(1.05);
+}
+
+/* === Tables === */
+.table {
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table thead {
+  background: #1e293b !important;
+  color: #f8fafc;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* === Badges === */
+.badge {
+  padding: 0.6em 1em;
+  border-radius: 12px;
+  font-size: 0.9em;
+}
+
+/* === Back to Dashboard Button Wrapper === */
+.mt-4.text-center {
+  margin-top: 2rem !important;
+}
+/* ---------------------------
+   Global base + gradient
+---------------------------- */
+:root{
+  --card-radius: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+*{ box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  /* darker grey → white → grey */
+  background: linear-gradient(-45deg, #c0c0c0, #e7e7e7, #ffffff, #b8b8b8);
+  background-size: 400% 400%;
+  animation: gradientShift 16s ease infinite;
+}
+
+/* Smooth animated gradient keyframes */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container spacing so content never touches edges */
+.container {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* ---------------------------
+   Cards / Panels
+---------------------------- */
+.soft-card {
+  border: 1px solid #e9ecef;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+/* ---------------------------
+   Forms
+---------------------------- */
+.form-control,
+.form-select,
+textarea.form-control {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea.form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 .2rem rgba(13,110,253,.15);
+  outline: none;
+}
+
+/* Ensure labels are consistent */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* ---------------------------
+   Buttons
+---------------------------- */
+.btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Subtle outline for secondary/back buttons */
+.btn-outline-secondary {
+  background: #fff;
+  border-color: #cfd8e3;
+}
+
+.btn-outline-secondary:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Improve wrapping for grouped action buttons */
+.action-buttons .btn {
+  white-space: nowrap;
+  margin: 2px;
+}
+
+/* On very small screens, stack action buttons vertically */
+@media (max-width: 576px) {
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ---------------------------
+   Tables
+---------------------------- */
+.table {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0; /* handled by parent card */
+}
+
+.table thead.table-light th {
+  background-color: #f8f9fa !important;
+  color: #111827;
+  font-weight: 700;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+/* Prevent description from blowing out layout */
+.table td:nth-child(2) {
+  max-width: 480px;
+  word-break: break-word;
+}
+
+/* Hover */
+.table-hover tbody tr:hover {
+  background-color: #f6f9fc;
+}
+
+/* ---------------------------
+   Badges for status/priority
+---------------------------- */
+.badge {
+  padding: .5em .8em;
+  font-weight: 600;
+}
+
+/* ---------------------------
+   Utility: keep sections spaced
+---------------------------- */
+.mb-4, .mb-3, .mb-2, .mt-4, .py-5 { /* allow Bootstrap spacing but ensure consistency */
+  scroll-margin-top: 24px;
+}
+
+/* ---------------------------
+   Back link style (optional)
+---------------------------- */
+.btn-back {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background .25s ease;
+}
+.btn-back:hover { background-color: #217dbb; }
+
+/* General body background */
+body.tasks-body {
+  background: #f8fafc; /* light neutral background */
+  color: #212529; /* dark text for readability */
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* Card styling */
+.soft-card {
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Labels */
+.form-label {
+  font-weight: 600;
+  color: #374151; /* dark grey instead of light grey */
+}
+
+/* Inputs and textareas */
+.form-control, .form-select {
+  background-color: #fff; /* white background */
+  color: #111827; /* dark text */
+  border: 1px solid #d1d5db;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #2563eb;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  border: none;
+}
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-warning {
+  background-color: #facc15;
+  color: #000;
+  border: none;
+}
+.btn-warning:hover {
+  background-color: #eab308;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Table styling */
+.table thead {
+  background-color: #f1f5f9;
+  color: #111827;
+  font-weight: 600;
+}
+
+.table tbody tr td {
+  color: #1f2937; /* dark gray text */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+/* Status badges */
+.badge.bg-success {
+  background-color: #16a34a !important;
+}
+.badge.bg-warning {
+  background-color: #facc15 !important;
+  color: #000 !important;
+}
+.badge.bg-primary {
+  background-color: #2563eb !important;
+}
+.badge.bg-secondary {
+  background-color: #6b7280 !important;
+}
+.badge.bg-danger {
+  background-color: #dc2626 !important;
+}
+
+/* Center header */
+h2 {
+  color: #1e293b; /* deep gray-blue */
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}

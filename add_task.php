@@ -90,5 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit"><?php echo $task['title']; ?></button>
         </form>
     <?php endforeach; ?>
+     <br><br>
+    <!-- Back to dashboard button -->
+    <a href="dashboard.php" class="btn-back">⬅ Back to Dashboard</a>
 </body>
 </html>
