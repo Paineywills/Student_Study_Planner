@@ -61,37 +61,69 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Add Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h2>Add a New Task</h2>
-    <?php if ($success): ?>
-        <p><?php echo $success; ?></p>
-    <?php endif; ?>
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
 
-    <!-- Normal Task Form -->
-    <form method="post">
-        <input type="text" name="task_title" placeholder="Task Title" required><br>
-        <textarea name="task_description" placeholder="Task Description"></textarea><br>
-        <select name="task_priority">
-            <option>High</option>
-            <option>Medium</option>
-            <option>Low</option>
-        </select><br>
-        <button type="submit">Add Task</button>
-    </form>
+                <div class="card shadow-lg p-4">
+                    <h2 class="mb-3">➕ Add a New Task</h2>
 
-    <h3>Quick Add Tasks</h3>
-    <?php foreach ($popular_tasks as $task): ?>
-        <form method="post" style="display:inline;">
-            <input type="hidden" name="task_title" value="<?php echo $task['title']; ?>">
-            <input type="hidden" name="task_description" value="<?php echo $task['description']; ?>">
-            <input type="hidden" name="task_priority" value="<?php echo $task['priority']; ?>">
-            <button type="submit"><?php echo $task['title']; ?></button>
-        </form>
-    <?php endforeach; ?>
-     <br><br>
-    <!-- Back to dashboard button -->
-    <a href="dashboard.php" class="btn-back">⬅ Back to Dashboard</a>
+                    <?php if ($success): ?>
+                        <div class="alert alert-info">
+                            <?php echo $success; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Normal Task Form -->
+                    <form method="post" class="mb-4">
+                        <div class="mb-3">
+                            <label class="form-label">Task Title</label>
+                            <input type="text" name="task_title" class="form-control" placeholder="Enter task title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea name="task_description" class="form-control" placeholder="Task details..."></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Priority</label>
+                            <select name="task_priority" class="form-select">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Add Task</button>
+                    </form>
+                </div>
+
+                <!-- Quick Add Section -->
+                <div class="card shadow-lg p-4 mt-4">
+                    <h3 class="mb-3">⚡ Quick Add Tasks</h3>
+                    <div class="d-flex flex-wrap gap-2">
+                        <?php foreach ($popular_tasks as $task): ?>
+                            <form method="post" style="display:inline;">
+                                <input type="hidden" name="task_title" value="<?php echo $task['title']; ?>">
+                                <input type="hidden" name="task_description" value="<?php echo $task['description']; ?>">
+                                <input type="hidden" name="task_priority" value="<?php echo $task['priority']; ?>">
+                                <button type="submit" class="btn btn-outline-secondary btn-sm">
+                                    <?php echo $task['title']; ?>
+                                </button>
+                            </form>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <!-- Back button -->
+                <div class="mt-4 text-center">
+                    <a href="dashboard.php" class="btn btn-secondary">⬅ Back to Dashboard</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
