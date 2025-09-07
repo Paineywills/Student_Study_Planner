@@ -39,9 +39,16 @@ Built with **PHP, MySQL, Bootstrap, and custom CSS**.
 ### 3. Database Setup
 1. Open phpMyAdmin in your browser:
    http://localhost/phpmyadmin
+<<<<<<< HEAD
 2. Import the provided student_study_planner.sql
  file (found in the project folder).
 3. Update database credentials in config.php if needed:
+=======
+2. Create a new database named study_planner (or any name you prefer).
+3. Import the provided study_planner.sql
+ file (found in the project folder).
+4. Update database credentials in config.php if needed:
+>>>>>>> fc9c903b65637d47bab2cb2e714c35915f221939
 
 ### 4. Run the App
    Open in your browser: http://localhost/Student_Study_Planner/
@@ -73,7 +80,11 @@ Built with **PHP, MySQL, Bootstrap, and custom CSS**.
 
 Default login: create your own account using the Register page.
 
+<<<<<<< HEAD
 Runs locally using XAMPP — no online deployment included.
+=======
+Runs locally using XAMPP/WAMP/LAMP — no online deployment included.
+>>>>>>> fc9c903b65637d47bab2cb2e714c35915f221939
 
 No license is provided (for personal use only).
 

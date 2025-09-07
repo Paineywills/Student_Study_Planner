@@ -11,17 +11,30 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fc9c903b65637d47bab2cb2e714c35915f221939
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+<<<<<<< HEAD
 -- --------------------------------------------------------
 -- Create database and use it
 -- --------------------------------------------------------
 CREATE DATABASE IF NOT EXISTS `student_study_planner`
   DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `student_study_planner`;
+=======
+--
+-- Database: `student_study_planner`
+--
+
+-- --------------------------------------------------------
+
+>>>>>>> fc9c903b65637d47bab2cb2e714c35915f221939
 --
 -- Table structure for table `tasks`
 --
